@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Link from 'next/Link';
 import Image from 'next/Image';
-import { bg, bgText} from '../styles/bg.module.css';
+import styles from '../styles/bg.module.css';
 
 function Copyright(props: any) {
     return (
@@ -24,10 +24,10 @@ function Copyright(props: any) {
 const Home: NextPage = () => {
   return (
   <div>
-    <div className="bg">
-      <Image src="/../public/to_the_moon.gif" layout="fill" quality={100} />
+    <div className={styles.bg}>
+      <Image src="/../public/to_the_moon.gif" layout="fill" quality={100}/>
       </div>
-      <div className="bgText">
+      <div className={styles.bgText}>
         <Link href="/SignIn" color="secondary">
           <h2>Go to the about page</h2>
           </Link>

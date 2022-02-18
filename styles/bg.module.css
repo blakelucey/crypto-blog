@@ -20,10 +20,12 @@
 
 
 .bgText {
+    position: absolute;
     margin: 0;
     font-size: 2rem;
     line-height: 3rem;
     text-align: center;
     padding-top: 40vh;
     text-shadow: 1px 1px 1px #3c5c5e;
+    z-index: 1;
   }
