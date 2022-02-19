@@ -1,5 +1,5 @@
 import * as React from 'react';
-import themeOptions from '../../pages/Dashboard/Dashboard';
+import themeOptions from '../../pages/profile/Dashboard';
 import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
 import Title from './Title';
 
