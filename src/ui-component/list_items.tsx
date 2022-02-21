@@ -9,64 +9,50 @@ import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+import InfoIcon from '@mui/icons-material/Info';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
+import PriceChangeIcon from '@mui/icons-material/PriceChange';
+import Link from 'next/link';
+import Divider from '@mui/material/Divider';
+
+
 
 export const mainListItems = (
   <React.Fragment>
     <ListItemButton>
       <ListItemIcon>
-        <DashboardIcon />
+      <InfoIcon fontSize='large'/>
+      </ListItemIcon>
+      <ListItemText primary="About" />
+    </ListItemButton>
+    <Divider />
+    <ListItemButton>
+      <ListItemIcon>
+      <DashboardIcon fontSize='large'/>
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItemButton>
+    <Divider/>
     <ListItemButton>
       <ListItemIcon>
-        <ShoppingCartIcon />
+      <ShowChartIcon fontSize='large'/>      
+      </ListItemIcon>
+      <ListItemText primary="Exchanges" />
+    </ListItemButton>
+    <Divider/>
+    <ListItemButton>
+      <ListItemIcon>
+      <PriceChangeIcon fontSize='large'/>
+        </ListItemIcon>
+      <ListItemText primary="Arbitrage Opportunities" />
+    </ListItemButton>
+    <Divider/>
+    <ListItemButton>
+      <ListItemIcon>
+      <MonetizationOnIcon fontSize='large'/>      
       </ListItemIcon>
       <ListItemText primary="Tip" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <PeopleIcon />
-      </ListItemIcon>
-      <ListItemText primary="Sentiment Analysis" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <BarChartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Market Trends" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <LayersIcon />
-      </ListItemIcon>
-      <ListItemText primary="Settings" />
-    </ListItemButton>
-  </React.Fragment>
-);
-
-export const secondaryListItems = (
-  <React.Fragment>
-    <ListSubheader component="div" inset>
-      Saved reports
-    </ListSubheader>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Current month" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Last quarter" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
     </ListItemButton>
   </React.Fragment>
 );

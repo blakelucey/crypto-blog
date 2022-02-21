@@ -7,7 +7,7 @@ import Stack from '@mui/material/Stack';
 // import Link from 'next/Link';
 import Image from 'next/Image';
 import styles from '../styles/bg.module.css';
-import ResponsiveDrawer from '../src/ui-component/Drawer';
+import ButtonAppBar from '../src/ui-component/AppBar';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
@@ -67,7 +67,8 @@ const Home: NextPage = () => {
       <Image src="/../public/doge_bg.jpeg" layout="fill" objectFit="cover" quality={100}/>
       </div>
       <div className={styles.bgText}>
-        <Stack direction="row" spacing={2}>
+        <ButtonAppBar />
+        {/* <Stack direction="row" spacing={2}>
           <Link href="/login/SignIn" underline="hover">
             Sign In
           </Link>
@@ -75,13 +76,12 @@ const Home: NextPage = () => {
           <Link href="/login/SignUp" underline="hover">
             Sign Up
           </Link>
-          <ResponsiveDrawer />
-          </Stack>
-        </div>
-    </div>
-    <div className={styles.copyright}>
-    <Copyright />
-    </div>
+          </Stack> */}
+          </div>
+          </div>
+          <div className={styles.copyright}>
+            <Copyright />
+            </div>
     </Container>
     </ThemeProvider>
 

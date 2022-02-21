@@ -20,6 +20,8 @@ import ShowChartIcon from '@mui/icons-material/ShowChart';
 import PriceChangeIcon from '@mui/icons-material/PriceChange';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import Link from 'next/link';
+import HomeIcon from '@mui/icons-material/Home';
+
 
 
 const theme = createTheme(
@@ -87,6 +89,19 @@ export default function ResponsiveDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
+        <Link href="/">
+        {/* {['About'].map((text, index) => ( */}
+          <ListItem>
+            <ListItemIcon>
+              <HomeIcon fontSize='large'/>
+            </ListItemIcon>
+            <ListItemText primary="Home" />
+          </ListItem>
+        {/* ))} */}
+        </Link>
+      </List>
+      <Divider />
+      <List>
         <Link href="/about/About">
         {/* {['About'].map((text, index) => ( */}
           <ListItem>
@@ -113,14 +128,14 @@ export default function ResponsiveDrawer() {
       </List>
       <Divider />
       <List>
-        {[`Exchanges`].map((text, index) => (
-          <ListItem button key={text}>
+          <Link href="/Exchanges/Exchanges">
+          <ListItem>
             <ListItemIcon>
-              {index = <ShowChartIcon fontSize='large'/>}
+            <ShowChartIcon fontSize='large'/>
             </ListItemIcon>
-            <ListItemText primary={text} />
+            <ListItemText primary='Exchanges' />
           </ListItem>
-        ))}
+        </Link>
       </List>
       <Divider />
       <List>
@@ -151,9 +166,9 @@ export default function ResponsiveDrawer() {
   return (
       <ThemeProvider theme={theme}>
     <div>
-      {(['left'] as const).map((anchor) => (
+      {(['left']).map((anchor) => (
         <React.Fragment key={anchor}>
-          <IconButton onClick={toggleDrawer(anchor, true)}><MenuIcon className={styles.slash}/>{anchor}</IconButton>
+          <IconButton onClick={toggleDrawer(anchor, true)}><MenuIcon fontSize='large'/></IconButton>
           <Drawer
             anchor={anchor}
             open={state[anchor]}
