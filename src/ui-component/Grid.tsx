@@ -4,12 +4,15 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import styles from '../../styles/bg.module.css';
+import { useState } from 'react';
+import DataTable from './Table';
 
 
 const theme = createTheme(
     {
       palette: {
-        // type: 'dark',
+        type: 'dark',
         primary: {
           main: 'rgba(255,209,128,0.71)',
         },
@@ -40,16 +43,20 @@ const theme = createTheme(
 
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  backgroundColor: theme.palette.background.paper,
   ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: 'center',
-  color: theme.palette.text.secondary,
+  color: theme.palette.text.primary,
 }));
+
 
 const fearGreed = (<img src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Latest Crypto Fear & Greed Index" />);
 
+
 export default function VariableWidthGrid() {
+
+
   return (
       <ThemeProvider theme={theme}>
     <Box sx={{ flexGrow: 1 }}>
@@ -58,10 +65,19 @@ export default function VariableWidthGrid() {
           <Item>{fearGreed}</Item>
         </Grid>
         <Grid item xl="auto">
-          <Item>xl=auto</Item>
+          <Item>
+            Trending Coins...
+            </Item>
+          </Grid>
+        <Grid item xl="auto">
+          <Item>
+            Exchange Rate?
+            </Item>            
         </Grid>
         <Grid item xl="auto">
-          <Item>xl=auto</Item>
+          <Item>
+            Maybe the data table...
+          </Item>
         </Grid>
       </Grid>
     </Box>

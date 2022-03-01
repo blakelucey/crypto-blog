@@ -83,81 +83,64 @@ export default function ResponsiveDrawer() {
 
   const list = (anchor: Anchor) => (
     <Box
-    //   sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
         <Link href="/">
-        {/* {['About'].map((text, index) => ( */}
           <ListItem>
             <ListItemIcon>
               <HomeIcon fontSize='large'/>
             </ListItemIcon>
             <ListItemText primary="Home" />
           </ListItem>
-        {/* ))} */}
-        </Link>
-      </List>
-      <Divider />
-      <List>
-        <Link href="/about/About">
-        {/* {['About'].map((text, index) => ( */}
-          <ListItem>
-            <ListItemIcon>
-              <InfoIcon fontSize='large'/>
-            </ListItemIcon>
-            <ListItemText primary="About" />
-          </ListItem>
-        {/* ))} */}
         </Link>
       </List>
       <Divider />
       <List>
         <Link href="/profile/Dashboard">
-        {/* {[`Dashboard`].map((text, index) => ( */}
           <ListItem>
             <ListItemIcon>
               <DashboardIcon fontSize='large'/>
             </ListItemIcon>
             <ListItemText primary="Dashboard"/>
           </ListItem>
-        {/* ))} */}
         </Link>
       </List>
       <Divider />
       <List>
-          <Link href="/Exchanges/Exchanges">
+        <Link href="/Arbitrage/Arbitrage">
+          <ListItem >
+            <ListItemIcon>
+              <PriceChangeIcon fontSize='large'/>
+            </ListItemIcon>
+            <ListItemText primary="Arbitrage Opportunities" />
+          </ListItem>
+          </Link>
+      </List>
+      <Divider />
+      <List>
+        <Link href="/about/About">
           <ListItem>
             <ListItemIcon>
-            <ShowChartIcon fontSize='large'/>
+              <InfoIcon fontSize='large'/>
             </ListItemIcon>
-            <ListItemText primary='Exchanges' />
+            <ListItemText primary="About" />
           </ListItem>
         </Link>
       </List>
       <Divider />
+      {/*For tips just make this a button to route to coinbase wallet.*/}
       <List>
-        {[`Arbitrage Opportunities`].map((text, index) => (
-          <ListItem button key={text}>
+        <Link href="/">
+          <ListItem>
             <ListItemIcon>
-              {index = <PriceChangeIcon fontSize='large'/>}
+              <MonetizationOnIcon fontSize='large'/>
             </ListItemIcon>
-            <ListItemText primary={text} />
+            <ListItemText primary="Tip"/>
           </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {[`Tip`].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index = <MonetizationOnIcon fontSize='large'/>}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+          </Link>
       </List>
       <Divider />
     </Box>
