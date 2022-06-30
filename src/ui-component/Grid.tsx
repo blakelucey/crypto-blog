@@ -12,30 +12,26 @@ import DataTable from './Table';
 const theme = createTheme(
     {
       palette: {
-        type: 'dark',
+        // type: 'light',
         primary: {
           main: 'rgba(255,209,128,0.71)',
         },
         secondary: {
           main: '#fafafa',
         },
-        background: {
-          default: '#212121',
-          paper: 'rgba(97,97,97,0.58)',
-        },
         text: {
           primary: '#ffd180',
         },
-        divider: 'rgba(255,209,128,0.71)',
+        divider: '#ffd180',
       },
       typography: {
         fontFamily: 'Droid Serif',
-        // fontWeightBold: 800,
+        fontWeightBold: 800,
         body2: {
-          fontSize: '1rem',
+          fontSize: '1.6rem',
         },
         body1: {
-          fontSize: '1.2rem',
+          fontSize: '1.7rem',
         },
       },
     });
@@ -62,22 +58,33 @@ export default function VariableWidthGrid() {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={4}>
         <Grid item xl="auto">
+          <Paper elevation={5}>
           <Item>{fearGreed}</Item>
+          </Paper>
         </Grid>
         <Grid item xl="auto">
+        <Paper elevation={5}>
           <Item>
             Trending Coins...
             </Item>
+            </Paper>
           </Grid>
         <Grid item xl="auto">
+        <Paper elevation={5}>
+
           <Item>
             Exchange Rate?
-            </Item>            
+            </Item>  
+            </Paper>          
         </Grid>
         <Grid item xl="auto">
+        <Paper elevation={5}>
+
           <Item>
             Maybe the data table...
+            <DataTable />
           </Item>
+          </Paper>
         </Grid>
       </Grid>
     </Box>

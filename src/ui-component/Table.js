@@ -8,6 +8,11 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Link from 'next/link';
+//1. Import coingecko-api
+import CoinGecko from 'coingecko-api';
+ 
+//2. Initiate the CoinGecko API Client
+const CoinGeckoClient = new CoinGecko();
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -16,6 +21,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
+    color: `#212121`,
   },
 }));
 
@@ -39,43 +45,40 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 //   return { name, calories, fat, carbs, protein };
 // }
 
-const rows = [ '/api/[market_data]/'
+// const rows = [
   // createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
   // createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
   // createData('Eclair', 262, 16.0, 24, 6.0),
   // createData('Cupcake', 305, 3.7, 67, 4.3),
   // createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
+// ];
 
 export default function DataTable() {
+
   return (
-    <Link href="/api/[market_data]">
+    <div>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-            <StyledTableCell align="right">Calories</StyledTableCell>
-            <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
+            <StyledTableCell>Coin</StyledTableCell>
+            <StyledTableCell align="right">Price</StyledTableCell>
+            <StyledTableCell align="right">Volume</StyledTableCell>
+            <StyledTableCell align="right">Timestamp</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row}>
+            <StyledTableRow>
               <StyledTableCell component="th" scope="row">
-                {row}
+                coin
               </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
+              <StyledTableCell align="right">price</StyledTableCell>
+              <StyledTableCell align="right">volume</StyledTableCell>
+              <StyledTableCell align="right">timestamp</StyledTableCell>
             </StyledTableRow>
-          ))}
         </TableBody>
       </Table>
     </TableContainer>
-    </Link>
+    </div>
   );
 }

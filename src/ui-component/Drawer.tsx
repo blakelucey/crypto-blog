@@ -1,16 +1,8 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemButton from '@mui/material/ListItemButton';
+import { Box, Drawer, Button, List, Divider, ListItem, ListItemIcon, ListItemText, ListItemButton, 
+IconButton }  from '@mui/material';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import styles from '../../styles/bg.module.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -21,38 +13,33 @@ import PriceChangeIcon from '@mui/icons-material/PriceChange';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import Link from 'next/link';
 import HomeIcon from '@mui/icons-material/Home';
+import { AnyTxtRecord } from 'dns';
 
 
 
 const theme = createTheme(
     {
       palette: {
-        // type: 'dark',
+        // type: 'light',
         primary: {
           main: 'rgba(255,209,128,0.71)',
         },
         secondary: {
           main: '#fafafa',
         },
-        background: {
-          default: '#212121',
-          paper: 'rgba(97,97,97,0.58)',
-        },
         text: {
           primary: '#ffd180',
-          secondary: 'rgba(255, 209, 128, 0, 71)',
-
         },
-        divider: 'rgba(255,209,128,0.71)',
+        divider: '#ffd180',
       },
       typography: {
         fontFamily: 'Droid Serif',
-        // fontWeightBold: 800,
+        fontWeightBold: 800,
         body2: {
-          fontSize: '1rem',
+          fontSize: '1.6rem',
         },
         body1: {
-          fontSize: '1.2rem',
+          fontSize: '1.7rem',
         },
       },
     });
@@ -60,7 +47,7 @@ const theme = createTheme(
 type Anchor = 'left';
 
 export default function ResponsiveDrawer() {
-  const [state, setState] = React.useState({
+  const [state, setState]: any = React.useState({
     top: false,
     left: false,
     bottom: false,
@@ -90,21 +77,25 @@ export default function ResponsiveDrawer() {
       <List>
         <Link href="/">
           <ListItem>
-            <ListItemIcon>
-              <HomeIcon fontSize='large'/>
-            </ListItemIcon>
-            <ListItemText primary="Home" />
+            <Button>
+              <ListItemIcon>
+               <HomeIcon fontSize='large'/>
+              </ListItemIcon>
+              <ListItemText primary="Home" />
+            </Button>
           </ListItem>
         </Link>
       </List>
       <Divider />
       <List>
-        <Link href="/profile/Dashboard">
+        <Link href="/Dashboard/Dashboard">
           <ListItem>
-            <ListItemIcon>
-              <DashboardIcon fontSize='large'/>
-            </ListItemIcon>
-            <ListItemText primary="Dashboard"/>
+            <Button>
+              <ListItemIcon>
+                <DashboardIcon fontSize='large'/>
+              </ListItemIcon>
+              <ListItemText primary="Dashboard"/>
+            </Button>
           </ListItem>
         </Link>
       </List>
@@ -112,10 +103,12 @@ export default function ResponsiveDrawer() {
       <List>
         <Link href="/Arbitrage/Arbitrage">
           <ListItem >
-            <ListItemIcon>
-              <PriceChangeIcon fontSize='large'/>
-            </ListItemIcon>
-            <ListItemText primary="Arbitrage Opportunities" />
+            <Button>
+              <ListItemIcon>
+                <PriceChangeIcon fontSize='large'/>
+              </ListItemIcon>
+             <ListItemText primary="Arbitrage Opportunities" />
+            </Button>
           </ListItem>
           </Link>
       </List>
@@ -123,10 +116,12 @@ export default function ResponsiveDrawer() {
       <List>
         <Link href="/about/About">
           <ListItem>
-            <ListItemIcon>
-              <InfoIcon fontSize='large'/>
-            </ListItemIcon>
-            <ListItemText primary="About" />
+            <Button>
+              <ListItemIcon>
+               <InfoIcon fontSize='large'/>
+              </ListItemIcon>
+              <ListItemText primary="About" />
+            </Button>
           </ListItem>
         </Link>
       </List>
@@ -135,10 +130,12 @@ export default function ResponsiveDrawer() {
       <List>
         <Link href="/">
           <ListItem>
-            <ListItemIcon>
-              <MonetizationOnIcon fontSize='large'/>
-            </ListItemIcon>
-            <ListItemText primary="Tip"/>
+            <Button>
+              <ListItemIcon>
+                <MonetizationOnIcon fontSize='large'/>
+             </ListItemIcon>
+              <ListItemText primary="Tip"/>
+            </Button>
           </ListItem>
           </Link>
       </List>
@@ -149,7 +146,7 @@ export default function ResponsiveDrawer() {
   return (
       <ThemeProvider theme={theme}>
     <div>
-      {(['left']).map((anchor) => (
+      {(['left']).map((anchor: any) => (
         <React.Fragment key={anchor}>
           <IconButton onClick={toggleDrawer(anchor, true)}><MenuIcon fontSize='large'/></IconButton>
           <Drawer
