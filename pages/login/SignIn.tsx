@@ -24,24 +24,20 @@ const theme = createTheme({
   palette: {
     // type: 'light',
     primary: {
-      main: "rgba(255,209,128,0.71)",
+      main: '#43a047',
     },
     secondary: {
-      main: "#fafafa",
+      main: '#607d8b',
     },
-    text: {
-      primary: "#ffd180",
-    },
-    divider: "#ffd180",
   },
   typography: {
-    fontFamily: "Droid Serif",
+    fontFamily: 'Droid Serif',
     fontWeightBold: 800,
     body2: {
-      fontSize: "1.6rem",
+      fontSize: '1.6rem',
     },
     body1: {
-      fontSize: "1.7rem",
+      fontSize: '1.7rem',
     },
   },
 });
@@ -139,6 +135,9 @@ export default function SignIn() {
           </Box>
         </Paper>
       </Container>
+      <br></br>
+      <br></br>
+      <br></br>
       <Footer />
     </ThemeProvider>
   );

@@ -9,32 +9,27 @@ import { useState } from 'react';
 import DataTable from './Table';
 
 
-const theme = createTheme(
-    {
-      palette: {
-        // type: 'light',
-        primary: {
-          main: 'rgba(255,209,128,0.71)',
-        },
-        secondary: {
-          main: '#fafafa',
-        },
-        text: {
-          primary: '#ffd180',
-        },
-        divider: '#ffd180',
-      },
-      typography: {
-        fontFamily: 'Droid Serif',
-        fontWeightBold: 800,
-        body2: {
-          fontSize: '1.6rem',
-        },
-        body1: {
-          fontSize: '1.7rem',
-        },
-      },
-    });
+const theme = createTheme({
+  palette: {
+    // type: 'light',
+    primary: {
+      main: '#43a047',
+    },
+    secondary: {
+      main: '#607d8b',
+    },
+  },
+  typography: {
+    fontFamily: 'Droid Serif',
+    fontWeightBold: 800,
+    body2: {
+      fontSize: '1.6rem',
+    },
+    body1: {
+      fontSize: '1.7rem',
+    },
+  },
+});
 
 
 
@@ -81,7 +76,6 @@ export default function VariableWidthGrid() {
         <Paper elevation={5}>
 
           <Item>
-            Maybe the data table...
             <DataTable />
           </Item>
           </Paper>

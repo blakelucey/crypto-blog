@@ -1,5 +1,3 @@
-
-
 import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
@@ -10,7 +8,7 @@ import styles from './stickyFooter.module.css';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="#000000" className={styles.center}>
+    <Typography variant="body2" color="#fff" className={styles.center}>
       {'Copyright © '}
       <Link color="inherit" href="https://www.blakelucey.dev">
         www.blakelucey.dev
@@ -49,12 +47,12 @@ export default function Footer() {
           mt: 'auto',
           backgroundColor: (theme) =>
             theme.palette.mode === 'light'
-              ? "rgba(255,209,128,0.71)"
-              : "rgba(255,209,128,0.71)",
+              ? "#43a047"
+              : "#43a047",
         }}
       >
         <Container maxWidth="sm">
-          <Typography variant="body1" color="#000000" className={styles.center}>
+          <Typography variant="body1" color="#fff" className={styles.center}>
             Crypto-Blog
           </Typography>
           <Copyright />

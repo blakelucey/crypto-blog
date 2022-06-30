@@ -7,15 +7,11 @@ const theme = createTheme({
   palette: {
     // type: 'light',
     primary: {
-      main: 'rgba(255,209,128,0.71)',
+      main: '#43a047',
     },
     secondary: {
-      main: '#fafafa',
+      main: '#607d8b',
     },
-    text: {
-      primary: '#ffd180',
-    },
-    divider: '#ffd180',
   },
   typography: {
     fontFamily: 'Droid Serif',

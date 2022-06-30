@@ -1,52 +1,63 @@
-import * as React from 'react';
-import { Box, Drawer, Button, List, Divider, ListItem, ListItemIcon, ListItemText, ListItemButton, 
-IconButton }  from '@mui/material';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
-import MenuIcon from '@mui/icons-material/Menu';
-import styles from '../../styles/bg.module.css';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
-import InfoIcon from '@mui/icons-material/Info';
-import ShowChartIcon from '@mui/icons-material/ShowChart';
-import PriceChangeIcon from '@mui/icons-material/PriceChange';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import Link from 'next/link';
-import HomeIcon from '@mui/icons-material/Home';
-import { AnyTxtRecord } from 'dns';
+import * as React from "react";
+import {
+  Box,
+  Drawer,
+  Button,
+  List,
+  Divider,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  ListItemButton,
+  IconButton,
+  styled,
+} from "@mui/material";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import MailIcon from "@mui/icons-material/Mail";
+import MenuIcon from "@mui/icons-material/Menu";
+import styles from "../../styles/bg.module.css";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
+import InfoIcon from "@mui/icons-material/Info";
+import ShowChartIcon from "@mui/icons-material/ShowChart";
+import PriceChangeIcon from "@mui/icons-material/PriceChange";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import Link from "next/link";
+import HomeIcon from "@mui/icons-material/Home";
+import { AnyTxtRecord } from "dns";
+import { makeStyles } from "@material-ui/styles";
 
+const useStyles = makeStyles({
+  paper: {
+    background: "transparent",
+  },
+});
 
+const theme = createTheme({
+  palette: {
+    // type: 'light',
+    primary: {
+      main: "#43a047",
+    },
+    secondary: {
+      main: "#607d8b",
+    },
+  },
+  typography: {
+    fontFamily: "Droid Serif",
+    fontWeightBold: 800,
+    body2: {
+      fontSize: "1.6rem",
+    },
+    body1: {
+      fontSize: "1.7rem",
+    },
+  },
+});
 
-const theme = createTheme(
-    {
-      palette: {
-        // type: 'light',
-        primary: {
-          main: 'rgba(255,209,128,0.71)',
-        },
-        secondary: {
-          main: '#fafafa',
-        },
-        text: {
-          primary: '#ffd180',
-        },
-        divider: '#ffd180',
-      },
-      typography: {
-        fontFamily: 'Droid Serif',
-        fontWeightBold: 800,
-        body2: {
-          fontSize: '1.6rem',
-        },
-        body1: {
-          fontSize: '1.7rem',
-        },
-      },
-    });
+type Anchor = "left";
 
-type Anchor = 'left';
-
-export default function ResponsiveDrawer() {
+export default function ResponsiveDrawer(this: any) {
   const [state, setState]: any = React.useState({
     top: false,
     left: false,
@@ -58,9 +69,9 @@ export default function ResponsiveDrawer() {
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
-        event.type === 'keydown' &&
-        ((event as React.KeyboardEvent).key === 'Tab' ||
-          (event as React.KeyboardEvent).key === 'Shift')
+        event.type === "keydown" &&
+        ((event as React.KeyboardEvent).key === "Tab" ||
+          (event as React.KeyboardEvent).key === "Shift")
       ) {
         return;
       }
@@ -77,11 +88,11 @@ export default function ResponsiveDrawer() {
       <List>
         <Link href="/">
           <ListItem>
-            <Button>
+            <Button variant="text">
               <ListItemIcon>
-               <HomeIcon fontSize='large'/>
+                <HomeIcon fontSize="large" className={styles.appbar}/>
               </ListItemIcon>
-              <ListItemText primary="Home" />
+              <ListItemText primary="Home" className={styles.appbar} />
             </Button>
           </ListItem>
         </Link>
@@ -90,11 +101,11 @@ export default function ResponsiveDrawer() {
       <List>
         <Link href="/Dashboard/Dashboard">
           <ListItem>
-            <Button>
+            <Button variant="text">
               <ListItemIcon>
-                <DashboardIcon fontSize='large'/>
+                <DashboardIcon fontSize="large" className={styles.appbar}/>
               </ListItemIcon>
-              <ListItemText primary="Dashboard"/>
+              <ListItemText primary="Dashboard" className={styles.appbar}/>
             </Button>
           </ListItem>
         </Link>
@@ -102,25 +113,25 @@ export default function ResponsiveDrawer() {
       <Divider />
       <List>
         <Link href="/Arbitrage/Arbitrage">
-          <ListItem >
-            <Button>
+          <ListItem>
+            <Button variant="text">
               <ListItemIcon>
-                <PriceChangeIcon fontSize='large'/>
+                <PriceChangeIcon fontSize="large" className={styles.appbar}/>
               </ListItemIcon>
-             <ListItemText primary="Arbitrage Opportunities" />
+              <ListItemText primary="Arbitrage Opportunities" className={styles.appbar}/>
             </Button>
           </ListItem>
-          </Link>
+        </Link>
       </List>
       <Divider />
       <List>
         <Link href="/about/About">
           <ListItem>
-            <Button>
+            <Button variant="text">
               <ListItemIcon>
-               <InfoIcon fontSize='large'/>
+                <InfoIcon fontSize="large" className={styles.appbar}/>
               </ListItemIcon>
-              <ListItemText primary="About" />
+              <ListItemText primary="About" className={styles.appbar}/>
             </Button>
           </ListItem>
         </Link>
@@ -130,35 +141,40 @@ export default function ResponsiveDrawer() {
       <List>
         <Link href="/">
           <ListItem>
-            <Button>
+            <Button variant="text">
               <ListItemIcon>
-                <MonetizationOnIcon fontSize='large'/>
-             </ListItemIcon>
-              <ListItemText primary="Tip"/>
+                <MonetizationOnIcon fontSize="large" className={styles.appbar}/>
+              </ListItemIcon>
+              <ListItemText primary="Tip" className={styles.appbar}/>
             </Button>
           </ListItem>
-          </Link>
+        </Link>
       </List>
       <Divider />
     </Box>
   );
 
+  const classes = useStyles();
   return (
-      <ThemeProvider theme={theme}>
-    <div>
-      {(['left']).map((anchor: any) => (
-        <React.Fragment key={anchor}>
-          <IconButton onClick={toggleDrawer(anchor, true)}><MenuIcon fontSize='large'/></IconButton>
-          <Drawer
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
-          >
-            {list(anchor)}
-          </Drawer>
-        </React.Fragment>
-      ))}
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        {["left"].map((anchor: any) => (
+          <React.Fragment key={anchor}>
+            <IconButton onClick={toggleDrawer(anchor, true)}>
+              <MenuIcon fontSize="large" className={styles.appbar} />
+            </IconButton>
+            <Drawer
+              anchor={anchor}
+              open={state[anchor]}
+              onClose={toggleDrawer(anchor, false)}
+              elevation={5}
+              classes={{ paper: classes.paper }}
+            >
+              {list(anchor)}
+            </Drawer>
+          </React.Fragment>
+        ))}
+      </div>
     </ThemeProvider>
   );
 }

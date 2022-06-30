@@ -3,6 +3,13 @@
 }
 
 .padding {
+    position: absolute;
     padding: 25px;
-    margin-top: 100px;
+    top: 115px;
+    width: 50%;
+}
+
+.padding2 {
+    margin-bottom: 200px;
+    margin-left: 100px;
 }
