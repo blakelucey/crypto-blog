@@ -24,20 +24,20 @@ const theme = createTheme({
   palette: {
     // type: 'light',
     primary: {
-      main: "#43a047",
+      main: '#546e7a',
     },
     secondary: {
-      main: "#607d8b",
+      main: '#cfd8dc',
     },
   },
   typography: {
-    fontFamily: "Droid Serif",
+    fontFamily: 'Droid Serif',
     fontWeightBold: 800,
     body2: {
-      fontSize: "1.6rem",
+      fontSize: '1.6rem',
     },
     body1: {
-      fontSize: "1.7rem",
+      fontSize: '1.7rem',
     },
   },
 });

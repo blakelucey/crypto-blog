@@ -47,8 +47,8 @@ export default function Footer() {
           mt: 'auto',
           backgroundColor: (theme) =>
             theme.palette.mode === 'light'
-              ? "#43a047"
-              : "#43a047",
+              ? "#546e7a"
+              : "#546e7a",
         }}
       >
         <Container maxWidth="sm">

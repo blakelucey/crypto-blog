@@ -101,3 +101,26 @@
   text-decoration: none;
   font-size: 11px;
 }
+
+
+.sign_in_position {
+  position: absolute;
+  right: 20px;
+}
+
+.sign_in_effect{
+  opacity: 1;
+}
+.sign_in_effect:hover {
+  opacity: 0.5;
+}
+
+.underline {
+  color: inherit;
+  text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+  transition: text-decoration-color 300ms;
+}
+
+.underline:hover {
+  text-decoration-color: #cfd8dc;
+}

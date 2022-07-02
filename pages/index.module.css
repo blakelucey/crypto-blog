@@ -1,0 +1,40 @@
+.logo_position {
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    box-shadow: -10px -10px 15px 1px #000;
+
+}
+
+.title_position {
+    position: absolute;
+    top: 250px;
+    right: 30px;
+}
+
+.descript_position {
+    position: absolute;
+    top: 350px;
+    right: 350px;
+}
+
+.input_position {
+    position: absolute;
+    top: 550px;
+    right: 250px;
+}
+
+.shadow{
+    box-shadow: -10px -10px 15px 1px #000;
+
+}
+
+  .underline {
+    color: inherit;
+    text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+    transition: text-decoration-color 300ms;
+  }
+  
+  .underline:hover {
+    text-decoration-color: #cfd8dc;
+  }
