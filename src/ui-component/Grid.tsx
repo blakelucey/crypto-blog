@@ -52,11 +52,11 @@ export default function VariableWidthGrid() {
       <ThemeProvider theme={theme}>
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={4}>
-        <Grid item xl="auto">
+        {/* <Grid item xl="auto">
           <Paper elevation={5}>
           <Item>{fearGreed}</Item>
           </Paper>
-        </Grid>
+        </Grid> */}
         <Grid item xl="auto">
         <Paper elevation={5}>
           <Item>

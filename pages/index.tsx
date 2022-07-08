@@ -94,9 +94,24 @@ const Home: NextPage = () => {
       <br></br>
       <br></br>
       <Box sx={{ height: 600, backgroundColor: `secondary.main` }}>
-        <Grid>
-          <Grid></Grid>
-        </Grid>
+        <br></br>
+        <Stack
+          direction="row"
+          justifyContent="space-evenly"
+          alignItems="center"
+          spacing={4}
+        >
+          <Typography>Data provided by CoinGecko.</Typography>
+            <Image
+              src="/../public/bw_coingecko_logo_without_dark_text-01.png"
+              objectFit="fill"
+              height={500}
+              width={500}
+              quality={100}
+              priority={true}
+              alt="CoinGecko Logo"
+            />
+        </Stack>
       </Box>
       <Footer />
     </ThemeProvider>

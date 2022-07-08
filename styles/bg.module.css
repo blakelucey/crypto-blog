@@ -103,10 +103,10 @@
 }
 
 
-.sign_in_position {
+/* .sign_in_position {
   position: absolute;
   right: 20px;
-}
+} */
 
 .sign_in_effect{
   opacity: 1;
@@ -123,4 +123,9 @@
 
 .underline:hover {
   text-decoration-color: #cfd8dc;
+}
+
+.appbar_positioning {
+  display: flex;
+  justify-content: space-between;
 }

@@ -43,9 +43,9 @@ const sign_in = (
   <Stack direction="row" spacing={2}>
     <Link href="/login/SignIn">
       <Button variant="text" className={styles.sign_in_effect}>
-      <Typography color="#fff" variant="h6">
-        Sign In
-      </Typography>
+        <Typography color="#fff" variant="h6">
+          Sign In
+        </Typography>
       </Button>
     </Link>
     {/* <Typography variant="h6">/</Typography> */}
@@ -65,40 +65,31 @@ export default function ButtonAppBar() {
       <Container maxWidth="xl">
         <Box sx={{ flexGrow: 1 }}>
           <AppBar color="primary">
-            <Toolbar>
-              {/* <ResponsiveDrawer /> */}
-              <Typography className={styles.sign_in_position}>
-              {sign_in}
-              </Typography>
+            <Toolbar className={styles.appbar_positioning}>
+            <Link href="/about/About" className={styles.underline}>
+                <Typography color="#fff" sx={{ marginLeft: 4 }}>
+                  About
+                </Typography>
+              </Link>
+              
+              <Link href="/Arbitrage/Arbitrage" className={styles.underline}>
+                <Typography color="#fff" sx={{ marginLeft: 4 }}>
+                  Arbitrage Opportunities
+                </Typography>
+              </Link>
               <Link href="/" className={styles.underline}>
                 <Typography sx={{ marginLeft: 4 }} color="#fff">
                   Home
                 </Typography>
               </Link>
-              <Link
-                href="/Dashboard/Dashboard"
-                className={styles.underline}
-              >
+              <Link href="/Dashboard/Dashboard" className={styles.underline}>
                 <Typography color="#fff" sx={{ marginLeft: 4 }}>
                   Dashboard
                 </Typography>
               </Link>
-              <Link
-                href="/Arbitrage/Arbitrage"
-                className={styles.underline}
-              >
-                <Typography color="#fff" sx={{ marginLeft: 4 }}>
-                  Arbitrage Opportunities
-                </Typography>
-              </Link>
-              <Link
-                href="/about/About"
-                className={styles.underline}
-              >
-                <Typography color="#fff" sx={{ marginLeft: 4 }}>
-                  About
-                </Typography>
-              </Link>
+              <Typography className={styles.sign_in_position}>
+                {sign_in}
+              </Typography>
             </Toolbar>
           </AppBar>
         </Box>

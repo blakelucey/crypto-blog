@@ -6,6 +6,14 @@
 
 }
 
+/* .logo_position:hover {
+  transform: scale(110%);
+} */
+
+/* .coinGeck_logo {
+  margin: 50px;
+} */
+
 .title_position {
     position: absolute;
     top: 250px;

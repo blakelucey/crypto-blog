@@ -12,11 +12,8 @@ import {
   Paper,
 } from "@mui/material";
 import Link from "next/link";
-//1. Import coingecko-api
-import CoinGecko from "coingecko-api";
-
-//2. Initiate the CoinGecko API Client
-const CoinGeckoClient = new CoinGecko();
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -58,6 +55,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 // ];
 
 export default function DataTable() {
+
+
   return (
     <div>
       <TableContainer component={Paper}>
