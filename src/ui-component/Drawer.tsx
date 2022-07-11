@@ -17,7 +17,6 @@ import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import styles from "../../styles/bg.module.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import InfoIcon from "@mui/icons-material/Info";
 import ShowChartIcon from "@mui/icons-material/ShowChart";
 import PriceChangeIcon from "@mui/icons-material/PriceChange";
@@ -26,10 +25,11 @@ import Link from "next/link";
 import HomeIcon from "@mui/icons-material/Home";
 import { AnyTxtRecord } from "dns";
 import { makeStyles } from "@material-ui/styles";
+import SettingsIcon from '@mui/icons-material/Settings';
 
 const useStyles = makeStyles({
   paper: {
-    background: "transparent",
+    background: "#546e7a",
   },
 });
 
@@ -112,19 +112,6 @@ export default function ResponsiveDrawer(this: any) {
       </List>
       <Divider />
       <List>
-        <Link href="/Arbitrage/Arbitrage">
-          <ListItem>
-            <Button variant="text">
-              <ListItemIcon>
-                <PriceChangeIcon fontSize="large" className={styles.appbar}/>
-              </ListItemIcon>
-              <ListItemText primary="Arbitrage Opportunities" className={styles.appbar}/>
-            </Button>
-          </ListItem>
-        </Link>
-      </List>
-      <Divider />
-      <List>
         <Link href="/about/About">
           <ListItem>
             <Button variant="text">
@@ -137,15 +124,15 @@ export default function ResponsiveDrawer(this: any) {
         </Link>
       </List>
       <Divider />
-      {/*For tips just make this a button to route to coinbase wallet.*/}
+      {/* For tips just make this a button to route to coinbase wallet.*/}
       <List>
         <Link href="/">
           <ListItem>
             <Button variant="text">
               <ListItemIcon>
-                <MonetizationOnIcon fontSize="large" className={styles.appbar}/>
+                <SettingsIcon fontSize="large" className={styles.appbar}/>
               </ListItemIcon>
-              <ListItemText primary="Tip" className={styles.appbar}/>
+              <ListItemText primary="Settings" className={styles.appbar}/>
             </Button>
           </ListItem>
         </Link>

@@ -39,7 +39,7 @@ export default function DashboardContent() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container>
+      <Container maxWidth="lg">
         <CssBaseline />
         <ButtonAppBar/>
         <div className={styles.grid}>

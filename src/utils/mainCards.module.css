@@ -1,0 +1,34 @@
+.padding {
+    padding: 30px;
+  }
+
+  .card {
+    padding: 30px;
+    width: auto;
+    height: 400px;
+  }
+  
+  .underline {
+    color: inherit;
+    text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+    transition: text-decoration-color 300ms;
+  }
+  
+  .underline:hover {
+    text-decoration-color: #5893df;
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .center {
+    position: absolute;
+    width: 100%;
+    top: 125px;
+    /* padding: 30px; */
+    margin: 10px;
+    text-align: start;
+  }

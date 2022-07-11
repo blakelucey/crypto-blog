@@ -8,7 +8,7 @@
 }
 
 .align_center {
-  position: fixed;
+  position: absolute;
   margin-top: 150px;
   margin-right: 290px;
   
@@ -16,4 +16,8 @@
 
 .text_color {
   color: #000000
+}
+
+.margin_bottom {
+  margin-bottom: 20px;
 }

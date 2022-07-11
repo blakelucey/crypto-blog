@@ -17,6 +17,9 @@ import styles from "./index.module.css";
 import ButtonAppBar from "../src/ui-component/AppBar";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Footer from "../src/ui-component/stickyFooter";
+import About from "../src/utils/mainCards";
+import WalletMain from "../src/utils/walletMain";
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 const theme = createTheme({
   palette: {
@@ -59,13 +62,21 @@ const Home: NextPage = () => {
               />
             </div>
             <div className={styles.title_position}>
-              <Typography variant="h2" className={styles.underline}>
+              <Typography
+                variant="h2"
+                className={styles.underline}
+                color="#546e7a"
+              >
                 Arbitrage trading opportunities...
               </Typography>
             </div>
             <br></br>
             <div className={styles.descript_position}>
-              <Typography variant="h4" className={styles.underline}>
+              <Typography
+                variant="h4"
+                className={styles.underline}
+                color="#546e7a"
+              >
                 For over x digital currencies,
               </Typography>
               <Typography variant="h4" className={styles.underline}>
@@ -91,28 +102,20 @@ const Home: NextPage = () => {
           </div>
         </Box>
       </Container>
+      <Button fullWidth variant="text">
+        <ArrowDownwardIcon />
+      </Button>
       <br></br>
       <br></br>
       <Box sx={{ height: 600, backgroundColor: `secondary.main` }}>
         <br></br>
-        <Stack
-          direction="row"
-          justifyContent="space-evenly"
-          alignItems="center"
-          spacing={4}
-        >
-          <Typography>Data provided by CoinGecko.</Typography>
-            <Image
-              src="/../public/bw_coingecko_logo_without_dark_text-01.png"
-              objectFit="fill"
-              height={500}
-              width={500}
-              quality={100}
-              priority={true}
-              alt="CoinGecko Logo"
-            />
-        </Stack>
+        <br></br>
+        <About />
       </Box>
+      <br></br>
+      <Container maxWidth="lg">
+        <WalletMain />
+      </Container>
       <Footer />
     </ThemeProvider>
   );

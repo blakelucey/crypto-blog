@@ -16,7 +16,7 @@ import {
   Divider,
 } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
-
+import Image from "next/Image";
 const theme = createTheme({
   palette: {
     // type: 'light',
@@ -63,29 +63,23 @@ export default function ButtonAppBar() {
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="xl">
-        <Box sx={{ flexGrow: 1 }}>
-          <AppBar color="primary">
+        <Box sx={{ flexGrow: 0.5 }}>
+          <AppBar color="primary" sx={{ padding: -100 }}>
             <Toolbar className={styles.appbar_positioning}>
-            <Link href="/about/About" className={styles.underline}>
-                <Typography color="#fff" sx={{ marginLeft: 4 }}>
-                  About
-                </Typography>
-              </Link>
-              
-              <Link href="/Arbitrage/Arbitrage" className={styles.underline}>
-                <Typography color="#fff" sx={{ marginLeft: 4 }}>
-                  Arbitrage Opportunities
-                </Typography>
-              </Link>
-              <Link href="/" className={styles.underline}>
-                <Typography sx={{ marginLeft: 4 }} color="#fff">
-                  Home
-                </Typography>
-              </Link>
+              <ResponsiveDrawer />
               <Link href="/Dashboard/Dashboard" className={styles.underline}>
-                <Typography color="#fff" sx={{ marginLeft: 4 }}>
-                  Dashboard
-                </Typography>
+                <Button variant="outlined" className={styles.sign_in_effect}>
+                  <Image
+                    src="/../public/logo_transparent.png"
+                    // objectFit="fill"
+                    height={100}
+                    width={200}
+                    quality={100}
+                    layout="intrinsic"
+                    priority={true}
+                    alt="Logo"
+                  />
+                </Button>
               </Link>
               <Typography className={styles.sign_in_position}>
                 {sign_in}
