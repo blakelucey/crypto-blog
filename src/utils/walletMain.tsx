@@ -58,8 +58,8 @@ export default function WalletMain() {
   };
 
   const handleAccount = (event: SelectChangeEvent) => {
-      setBankAccount(event.target.value as string);
-  }
+    setBankAccount(event.target.value as string);
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -83,27 +83,57 @@ export default function WalletMain() {
             <MenuItem value={"Ledger"}>Ledger</MenuItem>
           </Select>
           <br></br>
-          <Button color="primary" variant="contained" fullWidth>
+          <Button
+            color="primary"
+            variant="contained"
+            fullWidth
+            onClick={() => console.log("Select Wallet")}
+          >
             <Typography variant="h6"> Select your wallet</Typography>
           </Button>
+        </FormControl>
+        <br></br>
+        <br></br>
+        <FormControl fullWidth sx={{ margin: 1 }}>
+          <TextField
+            label="Wallet Token"
+            value={token}
+            onChange={handleToken}
+          />
           <br></br>
-          <br></br>
-          <TextField label="Wallet Token" value={token} onChange={handleToken} />
-          <br></br>
-          <Button color="primary" variant="contained" fullWidth>
-              <Typography variant="h6">Submit Token</Typography>
+          <Button
+            color="primary"
+            variant="contained"
+            fullWidth
+            onClick={() => console.log("Submit Token")}
+          >
+            <Typography variant="h6">Submit Token</Typography>
           </Button>
-          <br></br>
-          <br></br>
+        </FormControl>
+        <br></br>
+        <br></br>
+        <FormControl fullWidth sx={{ margin: 1 }}>
           <InputLabel id="account-label-one">Bank Account</InputLabel>
-          <Select value={bankAccount} label="Bank Account" onChange={handleAccount} id="account-label-one">
-              <MenuItem value={"PayPal"}>PayPal</MenuItem>
-              <MenuItem value={"Stripe"}>Stripe</MenuItem>
-              <MenuItem value={"Bank Account"}>Bank Account</MenuItem>
+          <Select
+            value={bankAccount}
+            label="Bank Account"
+            onChange={handleAccount}
+            id="account-label-one"
+          >
+            <MenuItem value={"PayPal"}>PayPal</MenuItem>
+            <MenuItem value={"Stripe"}>Stripe</MenuItem>
+            <MenuItem value={"Bank Account"}>Bank Account</MenuItem>
           </Select>
           <br></br>
-          <Button color="primary" variant="contained" fullWidth>
-              <Typography variant="h6">Select and Connect Your Account</Typography>
+          <Button
+            color="primary"
+            variant="contained"
+            fullWidth
+            onClick={() => console.log("Connect Account")}
+          >
+            <Typography variant="h6">
+              Select and Connect Your Account
+            </Typography>
           </Button>
         </FormControl>
       </Box>

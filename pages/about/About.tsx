@@ -86,7 +86,7 @@ function About() {
                     direction="row"
                     justifyContent="space-evenly"
                     alignItems="center"
-                    spacing={4}
+                    spacing={2}
                   >
                     <Typography>Data provided by CoinGecko.</Typography>
                     <Image
@@ -95,6 +95,7 @@ function About() {
                       height={100}
                       width={100}
                       quality={100}
+                      layout="intrinsic"
                       priority={true}
                       alt="CoinGecko Logo"
                     />
