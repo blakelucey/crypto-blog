@@ -26,6 +26,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import { AnyTxtRecord } from "dns";
 import { makeStyles } from "@material-ui/styles";
 import SettingsIcon from '@mui/icons-material/Settings';
+import CandlestickChartIcon from '@mui/icons-material/CandlestickChart';
 
 const useStyles = makeStyles({
   paper: {
@@ -99,13 +100,13 @@ export default function ResponsiveDrawer(this: any) {
       </List>
       <Divider />
       <List>
-        <Link href="/Dashboard/Dashboard">
+        <Link href="/Trade/Trade">
           <ListItem>
             <Button variant="text">
               <ListItemIcon>
-                <DashboardIcon fontSize="large" className={styles.appbar}/>
+                <CandlestickChartIcon fontSize="large" className={styles.appbar}/>
               </ListItemIcon>
-              <ListItemText primary="Dashboard" className={styles.appbar}/>
+              <ListItemText primary="Trade Opportunities" className={styles.appbar}/>
             </Button>
           </ListItem>
         </Link>
@@ -126,13 +127,13 @@ export default function ResponsiveDrawer(this: any) {
       <Divider />
       {/* For tips just make this a button to route to coinbase wallet.*/}
       <List>
-        <Link href="/">
+        <Link href="/Dashboard/Dashboard">
           <ListItem>
             <Button variant="text">
               <ListItemIcon>
-                <SettingsIcon fontSize="large" className={styles.appbar}/>
+                <DashboardIcon fontSize="large" className={styles.appbar}/>
               </ListItemIcon>
-              <ListItemText primary="Settings" className={styles.appbar}/>
+              <ListItemText primary="Dashboard" className={styles.appbar}/>
             </Button>
           </ListItem>
         </Link>

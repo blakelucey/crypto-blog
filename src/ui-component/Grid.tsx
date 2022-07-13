@@ -6,7 +6,8 @@ import Grid from "@mui/material/Grid";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import styles from "../../styles/bg.module.css";
 import { useState } from "react";
-import DataTable from "./Table";
+import DataTable from "../utils/Table";
+import CoinSelect from "../utils/coinSelect";
 
 const theme = createTheme({
   palette: {
@@ -47,7 +48,15 @@ export default function VariableWidthGrid() {
           direction="column"
           justifyContent="space-evenly"
           alignItems="center"
+          spacing={4}
         >
+          <Grid item xl="auto">
+            <Paper elevation={5}>
+              <Item>
+                <CoinSelect />
+              </Item>
+            </Paper>
+          </Grid>
           <Grid item xl="auto">
             <Paper elevation={5}>
               <Item>

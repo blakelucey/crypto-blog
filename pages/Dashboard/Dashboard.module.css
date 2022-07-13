@@ -1,3 +1,4 @@
-.grid {
-    margin-top: 175px;
+.footerPosition {
+    position: absolute;
+    top: 200px;
 }

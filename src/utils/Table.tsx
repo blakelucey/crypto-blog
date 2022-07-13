@@ -111,7 +111,7 @@ function stableSort<T>(
 }
 export default function DataTable() {
   const [order, setOrder] = useState<Order>("asc");
-  const [orderBy, setOrderBy] = useState<keyof Data>("price");
+  const [orderBy, setOrderBy] = useState<keyof Data>("profit");
   const [selected, setSelected] = useState<readonly string[]>([]);
   const [page, setPage] = useState(0);
   const [dense, setDense] = useState(false);
@@ -136,6 +136,7 @@ export default function DataTable() {
     coin: any;
     ticker: string;
     action: typeof Button;
+    profit: number;
   }
   interface HeadCell {
     disablePadding: boolean;
@@ -168,6 +169,12 @@ export default function DataTable() {
       numeric: false,
       disablePadding: true,
       label: "Exchange",
+    },
+    {
+      id: "profit",
+      numeric: true,
+      disablePadding: true,
+      label: "Profit",
     },
     {
       id: "action",
@@ -334,11 +341,11 @@ export default function DataTable() {
                     return (
                       <StyledTableRow
                         hover
-                        onClick={(event) => handleClick(event, row.price)}
+                        onClick={(event) => handleClick(event, row.profit)}
                         role="checkbox"
                         aria-checked={isItemSelected}
                         tabIndex={-1}
-                        key={row.price}
+                        key={row.profit}
                         selected={isItemSelected}
                       >
                         <StyledTableCell align="right">
@@ -352,6 +359,9 @@ export default function DataTable() {
                         </StyledTableCell>
                         <StyledTableCell align="right">
                           {row.exchange}
+                        </StyledTableCell>
+                        <StyledTableCell align="right">
+                          {row.profit}
                         </StyledTableCell>
                         <StyledTableCell align="right">
                           <Button variant="contained">
