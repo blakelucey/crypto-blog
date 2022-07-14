@@ -314,8 +314,8 @@ export default function DataTable() {
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ width: "100%" }}>
-        <Paper sx={{ width: "100%", mb: 2 }} elevation={5}>
-          <EnhancedTableToolbar />
+        {/* <Paper sx={{ width: "100%", mb: 2 }} elevation={5}> */}
+          {/* <EnhancedTableToolbar /> */}
           <TableContainer>
             <Table
               sx={{ minWidth: 750 }}
@@ -394,11 +394,11 @@ export default function DataTable() {
             onPageChange={handleChangePage}
             onRowsPerPageChange={handleChangeRowsPerPage}
           />
-        </Paper>
-        <FormControlLabel
+        {/* </Paper> */}
+        {/* <FormControlLabel
           control={<Switch checked={dense} onChange={handleChangeDense} />}
           label="Compact Rows"
-        />
+        /> */}
       </Box>
     </ThemeProvider>
   );

@@ -48,7 +48,7 @@ export default function VariableWidthGrid() {
           direction="column"
           justifyContent="space-evenly"
           alignItems="center"
-          spacing={4}
+          spacing={6}
         >
           <Grid item xl="auto">
             <Paper elevation={5}>

@@ -52,7 +52,7 @@ const Home: NextPage = () => {
       <Box sx={{ height: 2500 }}>
         <div id="top">
           <Container maxWidth="md">
-            <Box sx={{ height: 750 }}>
+            <Box sx={{ height: 725 }}>
               <Stack direction="row">
                 <div className={styles.logo_position}>
                   <Image
@@ -107,9 +107,8 @@ const Home: NextPage = () => {
             </Box>
           </Container>
         </div>
-        <Button fullWidth variant="text">
+        <Button variant="contained" className={styles.downArrow}>
           <a href="#about">
-            {" "}
             <ArrowDownwardIcon fontSize="large" />
           </a>
         </Button>
@@ -133,7 +132,7 @@ const Home: NextPage = () => {
         </Box>
         <br></br>
         <br></br>
-        <Button fullWidth variant="text">
+        <Button className={styles.upArrow} variant="contained">
           <a href="#top">
             {" "}
             <ArrowUpwardIcon fontSize="large" />

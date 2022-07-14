@@ -15,6 +15,7 @@ import {
   Select,
   FormControl,
   SelectChangeEvent,
+  FormGroup,
 } from "@mui/material";
 // import Link from 'next/Link';
 import Image from "next/Image";
@@ -64,78 +65,78 @@ export default function WalletMain() {
   return (
     <ThemeProvider theme={theme}>
       <Box>
-        <Typography variant="h3">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Pharetra
-          et ultrices neque ornare aenean euismod elementum nisi quis.
+        <Typography variant="h3" color="primary.main">
+          Add your digital wallet, and PayPal, Stripe, or Checking Account.
         </Typography>
         <br></br>
-        <FormControl fullWidth sx={{ margin: 1 }}>
-          <InputLabel id="demo-simple-select-label">Wallet</InputLabel>
-          <Select
-            id="demo-simple-select-label"
-            value={wallet}
-            label="Wallet"
-            onChange={handleWallet}
-          >
-            <MenuItem value={"CoinBase"}>CoinBase</MenuItem>
-            <MenuItem value={"MetaMask"}>MetaMask</MenuItem>
-            <MenuItem value={"Ledger"}>Ledger</MenuItem>
-          </Select>
+        <FormGroup>
+          <FormControl fullWidth sx={{ margin: 1 }}>
+            <InputLabel id="demo-simple-select-label">Wallet</InputLabel>
+            <Select
+              id="demo-simple-select-label"
+              value={wallet}
+              label="Wallet"
+              onChange={handleWallet}
+            >
+              <MenuItem value={"CoinBase"}>CoinBase</MenuItem>
+              <MenuItem value={"MetaMask"}>MetaMask</MenuItem>
+              <MenuItem value={"Ledger"}>Ledger</MenuItem>
+            </Select>
+            <br></br>
+            <Button
+              color="primary"
+              variant="contained"
+              fullWidth
+              onClick={() => console.log("Select Wallet")}
+            >
+              <Typography variant="h6"> Select your wallet</Typography>
+            </Button>
+          </FormControl>
           <br></br>
-          <Button
-            color="primary"
-            variant="contained"
-            fullWidth
-            onClick={() => console.log("Select Wallet")}
-          >
-            <Typography variant="h6"> Select your wallet</Typography>
-          </Button>
-        </FormControl>
-        <br></br>
-        <br></br>
-        <FormControl fullWidth sx={{ margin: 1 }}>
-          <TextField
-            label="Wallet Token"
-            value={token}
-            onChange={handleToken}
-          />
           <br></br>
-          <Button
-            color="primary"
-            variant="contained"
-            fullWidth
-            onClick={() => console.log("Submit Token")}
-          >
-            <Typography variant="h6">Submit Token</Typography>
-          </Button>
-        </FormControl>
-        <br></br>
-        <br></br>
-        <FormControl fullWidth sx={{ margin: 1 }}>
-          <InputLabel id="account-label-one">Bank Account</InputLabel>
-          <Select
-            value={bankAccount}
-            label="Bank Account"
-            onChange={handleAccount}
-            id="account-label-one"
-          >
-            <MenuItem value={"PayPal"}>PayPal</MenuItem>
-            <MenuItem value={"Stripe"}>Stripe</MenuItem>
-            <MenuItem value={"Bank Account"}>Bank Account</MenuItem>
-          </Select>
+          <FormControl fullWidth sx={{ margin: 1 }}>
+            <TextField
+              label="Wallet Token"
+              value={token}
+              onChange={handleToken}
+            />
+            <br></br>
+            <Button
+              color="primary"
+              variant="contained"
+              fullWidth
+              onClick={() => console.log("Submit Token")}
+            >
+              <Typography variant="h6">Submit Token</Typography>
+            </Button>
+          </FormControl>
           <br></br>
-          <Button
-            color="primary"
-            variant="contained"
-            fullWidth
-            onClick={() => console.log("Connect Account")}
-          >
-            <Typography variant="h6">
-              Select and Connect Your Account
-            </Typography>
-          </Button>
-        </FormControl>
+          <br></br>
+          <FormControl fullWidth sx={{ margin: 1 }}>
+            <InputLabel id="account-label-one">Bank Account</InputLabel>
+            <Select
+              value={bankAccount}
+              label="Bank Account"
+              onChange={handleAccount}
+              id="account-label-one"
+            >
+              <MenuItem value={"PayPal"}>PayPal</MenuItem>
+              <MenuItem value={"Stripe"}>Stripe</MenuItem>
+              <MenuItem value={"Bank Account"}>Bank Account</MenuItem>
+            </Select>
+            <br></br>
+            <Button
+              color="primary"
+              variant="contained"
+              fullWidth
+              onClick={() => console.log("Connect Account")}
+            >
+              <Typography variant="h6">
+                Select and Connect Your Account
+              </Typography>
+            </Button>
+          </FormControl>
+        </FormGroup>
       </Box>
     </ThemeProvider>
   );
