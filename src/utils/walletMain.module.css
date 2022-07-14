@@ -1,0 +1,9 @@
+.formSpace {
+    display: flexbox;
+    justify-content: space-between;
+}
+
+.formSpace2 {
+    display: flexbox;
+    justify-content: space-evenly;
+}

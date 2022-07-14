@@ -1,5 +1,5 @@
 import * as React from 'react';
-import themeOptions from '../../pages/Dashboard/Dashboard';
+import { useTheme } from '@mui/material/styles';
 import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
 import Title from './Title';
 
@@ -21,7 +21,7 @@ const data = [
 ];
 
 export default function Chart() {
-  const theme = themeOptions;
+  const theme = useTheme();
 
   return (
     <React.Fragment>
@@ -38,20 +38,20 @@ export default function Chart() {
         >
           <XAxis
             dataKey="time"
-            stroke={`rgba(255, 255, 255, 0.7)`}
-            // style={theme.typography.body2}
+            stroke={theme.palette.text.secondary}
+            style={theme.typography.body2}
           />
           <YAxis
-            stroke={`rgba(255, 255, 255, 0.7)`}
-            // style={`0.875rem`}
+            stroke={theme.palette.text.secondary}
+            style={theme.typography.body2}
           >
             <Label
               angle={270}
               position="left"
               style={{
                 textAnchor: 'middle',
-                fill: `#fff`,
-                // ...`1rem`,
+                fill: theme.palette.text.primary,
+                ...theme.typography.body1,
               }}
             >
               Sales ($)
@@ -61,7 +61,7 @@ export default function Chart() {
             isAnimationActive={false}
             type="monotone"
             dataKey="amount"
-            stroke={`#ffd180`}
+            stroke={theme.palette.primary.main}
             dot={false}
           />
         </LineChart>

@@ -1,64 +1,46 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import * as React from "react";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import styles from "./signIn.module.css";
+import {
+  Paper,
+  Typography,
+  Container,
+  Box,
+  Grid,
+  Link,
+  Checkbox,
+  FormControlLabel,
+  TextField,
+  CssBaseline,
+  Button,
+  Avatar,
+  createTheme,
+  ThemeProvider,
+} from "@mui/material";
+import ButtonAppBar from "../../src/ui-component/AppBar";
+import Footer from "../../src/ui-component/stickyFooter";
 
-function Copyright(props: any) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Crypto-Blog
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
-const theme = createTheme(
-    {
-      palette: {
-        // type: 'dark',
-        primary: {
-          main: 'rgba(255,209,128,0.71)',
-        },
-        secondary: {
-          main: '#fafafa',
-        },
-        background: {
-          default: '#212121',
-          paper: 'rgba(97,97,97,0.58)',
-        },
-        text: {
-          primary: '#ffd180',
-          secondary: 'rgba(255, 209, 128, 0, 71)',
-
-        },
-        divider: 'rgba(255,209,128,0.71)',
-      },
-      typography: {
-        fontFamily: 'Droid Serif',
-        // fontWeightBold: 800,
-        body2: {
-          fontSize: '1rem',
-        },
-        body1: {
-          fontSize: '1.2rem',
-        },
-      },
-    });
-
+const theme = createTheme({
+  palette: {
+    // type: 'light',
+    primary: {
+      main: '#546e7a',
+    },
+    secondary: {
+      main: '#cfd8dc',
+    },
+  },
+  typography: {
+    fontFamily: 'Droid Serif',
+    fontWeightBold: 800,
+    body2: {
+      fontSize: '1.6rem',
+    },
+    body1: {
+      fontSize: '1.7rem',
+    },
+  },
+});
 
 export default function SignIn() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -66,78 +48,99 @@ export default function SignIn() {
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
     console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+      email: data.get("email"),
+      password: data.get("password"),
     });
   };
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <ButtonAppBar />
+      <Container component="main" maxWidth="md">
         <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+        <Paper elevation={5} className={styles.padding}>
+          <Box
+            sx={{
+              marginTop: 8,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography
+              component="h1"
+              variant="h5"
+              className={styles.text_color}
             >
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
+              Sign in
+            </Typography>
+            <Box
+              component="form"
+              onSubmit={handleSubmit}
+              noValidate
+              sx={{ mt: 1 }}
+            >
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                autoFocus
+                color="primary"
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+              />
+              <FormControlLabel
+                control={<Checkbox value="remember" color="primary" />}
+                label="Remember me"
+                className={styles.text_color}
+              />
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Sign In
+              </Button>
+              <Grid container>
+                <Grid item xs>
+                  <Link href="#" variant="body2">
+                    <div className={styles.text_color}>Forgot password?</div>
+                  </Link>
+                </Grid>
+                <Grid item>
+                  <Link href="/login/SignUp" variant="body2">
+                    <div className={styles.text_color}>
+                      {"Don't have an account? Sign Up"}
+                    </div>
+                  </Link>
+                </Grid>
               </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
+            </Box>
           </Box>
-        </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
+        </Paper>
       </Container>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Footer />
     </ThemeProvider>
   );
 }

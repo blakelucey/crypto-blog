@@ -1,0 +1,23 @@
+.bg {
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  color: #000000
+}
+
+.align_center {
+  position: absolute;
+  margin-top: 150px;
+  margin-right: 290px;
+  
+}
+
+.text_color {
+  color: #000000
+}
+
+.margin_bottom {
+  margin-bottom: 20px;
+}

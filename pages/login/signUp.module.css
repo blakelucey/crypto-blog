@@ -1,0 +1,15 @@
+.text_color {
+    color: #000000;
+}
+
+.padding {
+    position: absolute;
+    padding: 25px;
+    top: 200px;
+    width: 50%;
+}
+
+.padding2 {
+    margin-bottom: 300px;
+    margin-left: 100px;
+}
