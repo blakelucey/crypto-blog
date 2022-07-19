@@ -20,7 +20,9 @@ import {
 import Image from "next/Image";
 import styles from "./coinSelect.module.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { TableRowsOutlined } from "@mui/icons-material";
 
 const theme = createTheme({
   palette: {
@@ -46,7 +48,18 @@ const theme = createTheme({
 
 export default function CoinSelect() {
   const [coinSelect, setCoin]: any = useState([]);
-  
+  const [rows, setRows]: any[] = useState();
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData: any = async () => {
+    const response: any = await axios.get("/api/coinList");
+    setRows(response.data.data);
+    console.log('isArray: ', Array.isArray(response.data.data));
+  };
+  console.log('rows: ', rows);
 
   const handleSelect = (event: SelectChangeEvent) => {
     setCoin(event.target.value as string);
@@ -54,7 +67,7 @@ export default function CoinSelect() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{margin: 2}}>
+      <Box sx={{ margin: 2 }}>
         <Typography variant="h4">
           Select the coin(s) you wish to trade:
         </Typography>
@@ -68,9 +81,13 @@ export default function CoinSelect() {
             onChange={handleSelect}
             multiple={true}
           >
-            <MenuItem value={"CoinBase"}>CoinBase</MenuItem>
-            <MenuItem value={"MetaMask"}>MetaMask</MenuItem>
-            <MenuItem value={"Ledger"}>Ledger</MenuItem>
+            {rows?.map((row: any) => {
+              return (
+                <MenuItem value={row.id}>
+                  Name: {row.name}, Symbol: {row.symbol}
+                </MenuItem>
+              );
+            })}
           </Select>
           <br></br>
           <Button
