@@ -15,6 +15,7 @@ import {
   Select,
   FormControl,
   SelectChangeEvent,
+  Autocomplete,
 } from "@mui/material";
 // import Link from 'next/Link';
 import Image from "next/Image";
@@ -22,7 +23,6 @@ import styles from "./coinSelect.module.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { TableRowsOutlined } from "@mui/icons-material";
 
 const theme = createTheme({
   palette: {
@@ -47,8 +47,10 @@ const theme = createTheme({
 });
 
 export default function CoinSelect() {
-  const [coinSelect, setCoin]: any = useState([]);
-  const [rows, setRows]: any[] = useState();
+  const [coinSelect, setCoin] = useState([]);
+  const [rows, setRows]: any = useState([]);
+  const fixedOptions = [rows[6]];
+  const [value, setValue] = useState([...fixedOptions, rows[13]]);
 
   useEffect(() => {
     fetchData();
@@ -57,12 +59,12 @@ export default function CoinSelect() {
   const fetchData: any = async () => {
     const response: any = await axios.get("/api/coinList");
     setRows(response.data.data);
-    console.log('isArray: ', Array.isArray(response.data.data));
+    console.log("isArray: ", Array.isArray(response.data.data));
   };
-  console.log('rows: ', rows);
+  console.log("rows: ", rows);
 
-  const handleSelect = (event: SelectChangeEvent) => {
-    setCoin(event.target.value as string);
+  const handleSelect = (event: any) => {
+    setCoin(event.target.value);
   };
 
   return (
@@ -73,22 +75,18 @@ export default function CoinSelect() {
         </Typography>
         <br></br>
         <FormControl fullWidth sx={{ margin: 1 }}>
-          <InputLabel id="demo-simple-select-label">Select Coin</InputLabel>
-          <Select
-            id="demo-simple-select-label"
-            value={coinSelect}
-            label="coin"
-            onChange={handleSelect}
-            multiple={true}
-          >
-            {rows?.map((row: any) => {
-              return (
-                <MenuItem value={row.id}>
-                  Name: {row.name}, Symbol: {row.symbol}
-                </MenuItem>
-              );
-            })}
-          </Select>
+          <Autocomplete
+            multiple
+            id="fixed-tags-demo"
+            options={rows}
+            value={rows.id}
+            style={{ width: 500 }}
+            getOptionLabel={(option: any) => option.name}
+            onChange={(event: any, newValue: any) => setValue(newValue)}
+            renderInput={(params) => (
+              <TextField {...params} placeholder="Bitcoin" />
+            )}
+          />
           <br></br>
           <Button
             color="primary"
@@ -96,7 +94,7 @@ export default function CoinSelect() {
             fullWidth
             onClick={() => console.log("Select Coin")}
           >
-            <Typography variant="h6"> Select your Coin</Typography>
+            <Typography variant="h6"> Select your Coin(s)</Typography>
           </Button>
         </FormControl>
       </Box>
