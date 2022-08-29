@@ -19,39 +19,61 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import styles from "./signUp.module.css";
 import ButtonAppBar from "../../src/ui-component/AppBar";
 import Footer from "../../src/ui-component/stickyFooter";
+import axios from "axios";
+import { useState } from "react";
 
 const theme = createTheme({
   palette: {
     // type: 'light',
     primary: {
-      main: '#546e7a',
+      main: "#546e7a",
     },
     secondary: {
-      main: '#cfd8dc',
+      main: "#cfd8dc",
     },
   },
   typography: {
-    fontFamily: 'Droid Serif',
+    fontFamily: "Droid Serif",
     fontWeightBold: 800,
     body2: {
-      fontSize: '1.6rem',
+      fontSize: "1.6rem",
     },
     body1: {
-      fontSize: '1.7rem',
+      fontSize: "1.7rem",
     },
   },
 });
 
 export default function SignUp() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  // const [firstName, setFirstName]: string = useState();
+  // const [lastName, setLastName]: string = useState();
+  // const [email, setEmail]: string = useState();
+  // const [password, setPassword]: string = useState();
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    let email = data.get("email");
+    let password = data.get("password");
+    let firstname = data.get("firstName");
+    let lastname = data.get("lastName");
+    console.log(email, password, firstname, lastname);
+    const response: any = await axios.post(`/api/signUp?email=${email}&password=${password}&firstname=${firstname}&lastname=${lastname}`);
+    
+    // {
+    //   email,
+    //   password,
+    //   firstname,
+    //   lastname,
+    // });
+    console.log("response: ", response.data);
   };
+
+  // const fetchData: any = async () => {
+  //   const response: any = await axios.post(`/api/signUp`, {
+  //     email, password, firstName, lastName
+  //   })
+  // }
 
   return (
     <ThemeProvider theme={theme}>

@@ -47,10 +47,9 @@ const theme = createTheme({
 });
 
 export default function CoinSelect() {
-  const [coinSelect, setCoin] = useState([]);
   const [rows, setRows]: any = useState([]);
-  const fixedOptions = [rows[6]];
-  const [value, setValue] = useState([...fixedOptions, rows[13]]);
+  const fixedOptions: any = [];
+  const [coinSelect, setCoin]: any = useState([...fixedOptions]);
 
   useEffect(() => {
     fetchData();
@@ -63,8 +62,9 @@ export default function CoinSelect() {
   };
   console.log("rows: ", rows);
 
-  const handleSelect = (event: any) => {
-    setCoin(event.target.value);
+  const handleSelect = () => {
+    console.log("selected: ", coinSelect);
+    axios.post
   };
 
   return (
@@ -81,8 +81,8 @@ export default function CoinSelect() {
             options={rows}
             value={rows.id}
             style={{ width: 500 }}
-            getOptionLabel={(option: any) => option.name}
-            onChange={(event: any, newValue: any) => setValue(newValue)}
+            getOptionLabel={(option: any) => option.id}
+            onChange={(event: any, newValue: any) => setCoin(newValue)}
             renderInput={(params) => (
               <TextField {...params} placeholder="Bitcoin" />
             )}
@@ -92,7 +92,7 @@ export default function CoinSelect() {
             color="primary"
             variant="contained"
             fullWidth
-            onClick={() => console.log("Select Coin")}
+            onClick={() => console.log('selected: ', coinSelect)}
           >
             <Typography variant="h6"> Select your Coin(s)</Typography>
           </Button>

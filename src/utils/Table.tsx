@@ -117,18 +117,18 @@ export default function DataTable() {
   const [dense, setDense] = useState(false);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [rows, setRows]: any = useState([]);
-  //Get data from database
+  // Get data from database
   // useEffect(() => {
   //   fetchData();
-  // });
+  // }, []);
 
   // const fetchData: any = async () => {
-  //   const response: any = await axios.get(`/api/get-canceled`);
-  //   let dataRows: any[] = response.data;
-  //   console.log("response", response.data);
+  //   const response: any = await axios.get(`/api/coinData`);
+  //   let dataRows: any[] = response.data.data;
+  //   console.log("response", response.data.data);
   //   setRows(dataRows);
   // };
-  // console.log(fetchData);
+
 
   interface Data {
     price: number;
