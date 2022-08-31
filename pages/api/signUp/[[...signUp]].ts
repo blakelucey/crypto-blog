@@ -3,13 +3,13 @@ import * as pool from "../../../src/utils/dbConnection";
 import console from "console";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const { email, password, firstname, lastname } = req.body as any;
+  const { firstname, lastname, email, password } = req.query as any;
   let conn;
   try {
     conn = await pool.getConnection();
     conn.query(
-      `INSERT INTO Users(email, password, firstname, lastname) VALUES(?, ?, ?, ?)`,
-      [email, password, firstname, lastname]
+      `INSERT INTO Users(first_name, last_name, email, password) VALUES(?, ?, ?, ?)`,
+      [firstname, lastname, email, password]
     );
 
     res.status(201);

@@ -57,15 +57,8 @@ export default function SignUp() {
     let password = data.get("password");
     let firstname = data.get("firstName");
     let lastname = data.get("lastName");
-    console.log(email, password, firstname, lastname);
-    const response: any = await axios.post(`/api/signUp?email=${email}&password=${password}&firstname=${firstname}&lastname=${lastname}`);
-    
-    // {
-    //   email,
-    //   password,
-    //   firstname,
-    //   lastname,
-    // });
+    console.log(firstname, lastname, email, password);
+    const response: any = await axios.post(`/api/signUp?firstname=${firstname}&lastname=${lastname}&email=${email}&password=${password}`);
     console.log("response: ", response.data);
   };
 
