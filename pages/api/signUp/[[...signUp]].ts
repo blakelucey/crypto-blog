@@ -7,12 +7,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   let conn;
   try {
     conn = await pool.getConnection();
-    conn.query(
+    await conn.query(
       `INSERT INTO Users(first_name, last_name, email, password) VALUES(?, ?, ?, ?)`,
       [firstname, lastname, email, password]
     );
 
-    res.status(201);
+    res.status(201).json({ message: "signUp insertion query succeeded..." });
   } catch (err) {
     console.log(err);
   } finally {
