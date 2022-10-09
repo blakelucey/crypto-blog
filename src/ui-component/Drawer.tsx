@@ -100,33 +100,6 @@ export default function ResponsiveDrawer(this: any) {
       </List>
       <Divider />
       <List>
-        <Link href="/Trade/Trade">
-          <ListItem>
-            <Button variant="text">
-              <ListItemIcon>
-                <CandlestickChartIcon fontSize="large" className={styles.appbar}/>
-              </ListItemIcon>
-              <ListItemText primary="Trade Opportunities" className={styles.appbar}/>
-            </Button>
-          </ListItem>
-        </Link>
-      </List>
-      <Divider />
-      <List>
-        <Link href="/about/About">
-          <ListItem>
-            <Button variant="text">
-              <ListItemIcon>
-                <InfoIcon fontSize="large" className={styles.appbar}/>
-              </ListItemIcon>
-              <ListItemText primary="About" className={styles.appbar}/>
-            </Button>
-          </ListItem>
-        </Link>
-      </List>
-      <Divider />
-      {/* For tips just make this a button to route to coinbase wallet.*/}
-      <List>
         <Link href="/Dashboard/Dashboard">
           <ListItem>
             <Button variant="text">
@@ -139,6 +112,19 @@ export default function ResponsiveDrawer(this: any) {
         </Link>
       </List>
       <Divider />
+      <List>
+        <Link href="/Trade/Trade">
+          <ListItem>
+            <Button variant="text">
+              <ListItemIcon>
+                <CandlestickChartIcon fontSize="large" className={styles.appbar}/>
+              </ListItemIcon>
+              <ListItemText primary="Trade Opportunities" className={styles.appbar}/>
+            </Button>
+          </ListItem>
+        </Link>
+      </List>
+      <Divider />    
     </Box>
   );
 

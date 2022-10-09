@@ -52,10 +52,10 @@ const Home: NextPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <ButtonAppBar />
-      <Box sx={{ height: 2500 }}>
+      <Box sx={{ height: 1950 }}>
         <div id="top">
           <Container maxWidth="md">
-            <Box sx={{ height: 725 }}>
+            <Box sx={{ height: 700 }}>
               <Stack direction="row">
                 <div className={styles.logo_position}>
                   <Image
